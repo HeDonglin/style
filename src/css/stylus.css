@@ -1,5 +1,14 @@
-.stylus {
+/*多行注释输出*/
+/*强制输出*/
+html {
+  background-color: #400;
+}
+.a {
+  background: #000;
+}
+.a1 {
+  background: #000;
+}
+.a2 {
   background: #500;
-  border: 10px solid #909;
-  color: #fff;
 }

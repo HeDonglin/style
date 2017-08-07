@@ -1,7 +1,38 @@
+// 原始配置方式
+// npm i stylus -g
 // stylus -h 所有命令
+// stylus -w 文件夹 -o css 文件夹
 // stylus -w scss -o css
 
-.stylus
-    background #500
-    border 10px solid #909
-    color: #fff
+// 科学配置
+// gulp
+// gulp-stylus
+
+// 单行注释不输出
+/*多行注释输出*/
+/*!强制输出*/
+
+// 可以不需要花括号
+// 可以不需要冒号
+// 可以不需要分号
+
+// _不能省略,后缀可以省略默认为styl
+// 不能@import 除了styl的其他文件
+
+@import _base
+// @import '_base';
+// @import '_base.styl'
+// @import '_base.css' 直接输出
+// @import '_base.sass' 报错
+
+.a
+    background #000
+
+.a1 {
+    background:#000
+}
+
+.a2
+    background #500;
+
+
