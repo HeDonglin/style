@@ -1,3 +1,17 @@
-.scss {
-  background: #900;
-  border: 10px solid #600; }
+/*
+* @Author: Administrator
+* @Date:   2017-08-07 00:42:09
+* @Last Modified by:   w3c0929
+* @Last Modified time: 2017-08-09 00:01:37
+*/
+.header .name-1 {
+  width: 100px;
+}
+
+.header .name-2 {
+  width: 100px;
+}
+
+.header .name-3 {
+  width: 100px;
+}

@@ -4,7 +4,7 @@
  * @Author: hedonglin
  * @Date:   2017-08-07 15:32:42
  * @Last Modified by:   hedonglin
- * @Last Modified time: 2017-08-07 18:09:57
+ * @Last Modified time: 2017-08-09 00:00:57
  */
 
 // 引入插件
@@ -43,7 +43,7 @@ gulp.task('nsass', function() {
     var dst = './src/css';
     return gulp.src(src)
         .pipe(plumber())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(gulp.dest(dst));
 });
 
