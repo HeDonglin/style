@@ -4,7 +4,7 @@
  * @Author: hedonglin
  * @Date:   2017-08-07 15:32:42
  * @Last Modified by:   hedonglin
- * @Last Modified time: 2017-08-23 17:24:36
+ * @Last Modified time: 2017-08-23 18:16:57
  */
 
 // 引入插件
@@ -29,7 +29,7 @@ var distPath = path === 'dist' ? 'html/' : '';
 var pathHtmlName = distPath + 'index.html';
 
 gulp.task('nless', function() {
-    var src = ['./src/style/**/*.less', '!_*.less'];
+    var src = ['./src/style/**/*.less', '!./src/style/**/_*.less'];
     var dst = './src/css';
     return gulp.src(src)
         .pipe(plumber())
@@ -39,7 +39,7 @@ gulp.task('nless', function() {
 
 
 gulp.task('nsass', function() {
-    var src = ['./src/style/**/*.+(scss|sass)', '!_*.scss'];
+    var src = ['./src/style/**/*.+(scss|sass)', '!./src/style/**/_*.scss'];
     var dst = './src/css';
     return gulp.src(src)
         .pipe(plumber())
@@ -49,7 +49,7 @@ gulp.task('nsass', function() {
 
 
 gulp.task('nstylus', function() {
-    var src = ['./src/style/**/*.styl', '!_*.styl'];
+    var src = ['./src/style/**/*.styl', '!./src/style/**/_*.styl'];
     var dst = './src/css';
     return gulp.src(src)
         .pipe(plumber())
@@ -59,7 +59,7 @@ gulp.task('nstylus', function() {
 });
 
 gulp.task('npostcss', function() {
-    var src = ['./src/style/**/*.css', '!_*.css'];
+    var src = ['./src/style/**/*.css', '!./src/style/**/_*.css'];
     var dst = './src/css';
     return gulp.src(src)
         .pipe(plumber())
@@ -78,7 +78,7 @@ gulp.task('preview', function() {
         },
         // proxy: 'localhost:3000',
         notify: false,
-        open: true,
+        open: false,
         browser: ['chrome'], //可以配置多个浏览器
         injectChanges: true, //热替换，注入css
         files: ['./' + path + '/css/**/*.css'], //监听css文件便于bs-html-injector进行热替换
@@ -96,10 +96,10 @@ gulp.task('preview', function() {
 
 
 gulp.task('nwatch', function() {
-    gulp.watch(['src/style/**/*.less', '!_*.less'], ['nless']);
-    gulp.watch(['src/style/**/*.+(scss|sass)', '!_*.+(scss|sass)'], ['nsass']);
-    gulp.watch(['src/style/**/*.styl', '!_*.styl'], ['nstylus']);
-    gulp.watch(['src/style/**/*.css', '!_*.css'], ['npostcss']);
+    gulp.watch(['src/style/**/*.less', '!./src/style/**/_*.less'], ['nless']);
+    gulp.watch(['src/style/**/*.+(scss|sass)', '!./src/style/**/_*.+(scss|sass)'], ['nsass']);
+    gulp.watch(['src/style/**/*.styl', '!./src/style/**/_*.styl'], ['nstylus']);
+    gulp.watch(['src/style/**/*.css', '!./src/style/**/_*.css'], ['npostcss']);
 });
 
 
